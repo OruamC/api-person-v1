@@ -7,12 +7,12 @@ import org.mapstruct.factory.Mappers;
 import one.digitalinnovation.personaapi.dto.request.PersonDTO;
 import one.digitalinnovation.personaapi.entity.Person;
 
-@Mapper(componentModel="spring")
+@Mapper
 public interface PersonMapper {
 
 	PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 	
-	@Mapping(target = "birthDate", source = "BirthDate", dateFormat = "dd-MM-yyyy")
+	@Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
 	Person toModel(PersonDTO personDTO);
 	
 	PersonDTO toDTO(Person person);
